@@ -6,5 +6,4 @@ pluginManagement {
 
 rootProject.name = 'cougarlib'
 
-include ':cougar-swerve-lib'
-project(':cougar-swerve-lib').projectDir = new File('./cougar-swerve-lib')
+include 'cougar-swerve-lib'

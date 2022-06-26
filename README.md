@@ -8,21 +8,29 @@ Begin by adding this project as a git submodule.
 
 Run (**in the root directory of your project**):
 
-`git submodule add https://github.com/FRC2539/cougarlib.git cougarlib`
+```
+git submodule add https://github.com/FRC2539/cougarlib.git cougarlib
+
+cd cougarlib
+
+git submodule update --init
+```
 
 ### Importing The Library
 
 In `build.gradle` add the following at the end of the dependencies list:
 
 ```
-implementation project(':cougarlib')
+implementation project(':cougarlib:cougar-swerve-lib')
 ```
 
 In `settings.gradle` add the following to the end of the file:
 
 ```
 include ':cougarlib'
+include ':cougarlib:cougar-swerve-lib'
 project(':cougarlib').projectDir = new File('./cougarlib')
+project(':cougarlib:cougar-swerve-lib').projectDir = new File('./cougarlib/cougar-swerve-lib')
 ```
 
 ### Preventing Formatting Errors

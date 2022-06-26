@@ -1,11 +1,13 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'edu.wpi.first.GradleRIO' version '2022.4.1'
+    id 'edu.wpi.first.GradleRIO'
 }
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
+
+wpi.maven.useLocal = false
 
 allprojects {
     group 'org.frc2539.cougarlib'
@@ -20,7 +22,7 @@ dependencies {
     implementation wpi.java.deps.wpilib()
     implementation wpi.java.vendor.java()
 
-    implementation project(':cougar-swerve-lib')
+    implementation project('cougar-swerve-lib')
 }
 
 publishing {
