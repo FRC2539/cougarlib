@@ -16,6 +16,11 @@ cd cougarlib
 git submodule update --init
 ```
 
+## Keeping The Libraries Updated
+We recommend using the source control page in VSCode to pull any library changes from GitHub. 
+
+The same results can be achieved using `git submodule ...`, but the source control panel is easier with a complex library like this.
+
 ### Importing The Library
 
 In `build.gradle` add the following at the end of the dependencies list:
