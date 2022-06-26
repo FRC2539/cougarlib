@@ -28,6 +28,7 @@ In `build.gradle` add the following at the end of the dependencies list:
 _Note: the cougar-swerve-lib section is optional. Import only `:cougarlib` if desired._
 
 ```
+implementation project(':cougarlib')
 implementation project(':cougarlib:cougar-swerve-lib')
 ```
 
