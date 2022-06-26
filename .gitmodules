@@ -1,0 +1,3 @@
+[submodule "cougar-swerve-lib"]
+	path = cougar-swerve-lib
+	url = https://github.com/FRC2539/cougar-swerve-lib.git
