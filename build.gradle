@@ -74,5 +74,8 @@ publishing {
 }
 
 signing {
+    def signingKey = System.getenv("MAVEN_USERNAME")
+    def signingPassword = System.getenv("MAVEN_PASSWORD")
+    useInMemoryPgpKeys(signingKey, signingPassword)
     sign publishing.publications.mavenJava
 }
