@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
+    id 'signing'
     id 'edu.wpi.first.GradleRIO'
 }
 
@@ -25,10 +26,39 @@ dependencies {
     implementation project('cougar-swerve-lib')
 }
 
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
+
+            pom {
+                name = 'cougarlib'
+                description = 'A library containing the common code for all of our java robots.'
+                url = 'https://github.com/FRC2539/cougarlib'
+                licenses {
+                    license {
+                        name = 'MIT License'
+                        url = 'https://github.com/FRC2539/cougarlib/blob/main/LICENSE'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'we-gold'
+                        name = 'Weaver Goldman'
+                        email = 'we.goldm@gmail.com'
+                    }
+                }
+                scm {
+                    connection = 'scm:git:git://github.com/FRC2539/cougarlib.git'
+                    developerConnection = 'scm:git:ssh://github.com/FRC2539/cougarlib.git'
+                    url = 'https://github.com/FRC2539/cougarlib'
+                }
+            
         }
     }
     
@@ -41,4 +71,8 @@ publishing {
             }
         }
     }
+}
+
+signing {
+    sign publishing.publications.mavenJava
 }
