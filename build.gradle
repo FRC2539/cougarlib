@@ -10,7 +10,7 @@ targetCompatibility = JavaVersion.VERSION_11
 wpi.maven.useLocal = false
 
 allprojects {
-    group 'org.frc2539.cougarlib'
+    group 'org.frc2539'
     version '2022.0.0'
 
     repositories {
