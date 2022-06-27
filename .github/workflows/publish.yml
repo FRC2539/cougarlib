@@ -15,12 +15,6 @@ jobs:
           submodules: recursive
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-      - name: Add signing keys
-        run: |
-          echo "signing.key=${{ secrets.OSSRH_GPG_SECRET_KEY }}" >> gradle.properties
-          echo "signing.keyId=${{ secrets.OSSRH_GPG_SECRET_KEY_ID }}" >> gradle.properties
-          echo "signing.password=${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}" >> gradle.properties
-          cat gradle.properties
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
       - name: Publish package
@@ -31,5 +25,5 @@ jobs:
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
-          SECRET_KEY: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
-          SECRET_KEY_PASSWORD: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+          ORG_GRADLE_PROJECT_signingKey: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
+          ORG_GRADLE_PROJECT_signingPassword: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
