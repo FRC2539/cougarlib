@@ -11,7 +11,7 @@ wpi.maven.useLocal = false
 
 allprojects {
     group 'org.frc2539'
-    version '2022.0.0'
+    version '2022.0.1'
 
     repositories {
         mavenCentral()
