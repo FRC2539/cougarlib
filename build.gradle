@@ -58,7 +58,7 @@ publishing {
                     developerConnection = 'scm:git:ssh://github.com/FRC2539/cougarlib.git'
                     url = 'https://github.com/FRC2539/cougarlib'
                 }
-            
+            }
         }
     }
     
