@@ -12,7 +12,7 @@ wpi.maven.useLocal = false
 
 allprojects {
     group 'com.team2539'
-    version '2022.0.1'
+    version '2022.0.2'
 
     repositories {
         mavenCentral()
@@ -22,8 +22,6 @@ allprojects {
 dependencies {
     implementation wpi.java.deps.wpilib()
     implementation wpi.java.vendor.java()
-
-    implementation project('cougar-swerve-lib')
 }
 
 java {
