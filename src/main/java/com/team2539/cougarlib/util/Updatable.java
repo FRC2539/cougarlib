@@ -1,4 +1,4 @@
-package org.frc2539.cougarlib.util;
+package com.team2539.cougarlib.util;
 
 @FunctionalInterface
 public interface Updatable {

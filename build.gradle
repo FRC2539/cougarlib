@@ -10,7 +10,7 @@ targetCompatibility = JavaVersion.VERSION_11
 wpi.maven.useLocal = false
 
 allprojects {
-    group 'org.frc2539'
+    group 'com.team2539'
     version '2022.0.1'
 
     repositories {
@@ -28,11 +28,11 @@ dependencies {
 publishing {
     repositories {
         maven {
-            name = "GitHubPackages"
-            url = "https://maven.pkg.github.com/FRC2539/cougarlib"
+            name = "OSSRH"
+            url = "https://oss.sonatype.org/service/local/staging/deploy/maven2/"
             credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
+                username = System.getenv("MAVEN_USERNAME")
+                password = System.getenv("MAVEN_PASSWORD")
             }
         }
     }

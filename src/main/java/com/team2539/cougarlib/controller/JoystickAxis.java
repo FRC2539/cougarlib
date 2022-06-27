@@ -1,4 +1,4 @@
-package org.frc2539.cougarlib.controller;
+package com.team2539.cougarlib.controller;
 
 import edu.wpi.first.wpilibj.Joystick;
 

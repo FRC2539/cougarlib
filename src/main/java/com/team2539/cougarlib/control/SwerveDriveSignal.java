@@ -1,4 +1,4 @@
-package org.frc2539.cougarlib.control;
+package com.team2539.cougarlib.control;
 
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 
