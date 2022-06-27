@@ -3,6 +3,7 @@ plugins {
     id 'maven-publish'
     id 'signing'
     id 'edu.wpi.first.GradleRIO'
+    id 'com.diffplug.spotless' version '6.6.1'
 }
 
 sourceCompatibility = JavaVersion.VERSION_11
@@ -76,4 +77,18 @@ signing {
     def signingPassword = findProperty("signingPassword")
     useInMemoryPgpKeys(signingKey, signingPassword)
     sign publishing.publications.mavenJava
+}
+
+spotless {
+   java {
+      target fileTree('.') {
+            include '**/*.java'
+            exclude '**/build/**', '**/build-*/**'
+      }
+      toggleOffOn()
+      palantirJavaFormat()
+      removeUnusedImports()
+      trimTrailingWhitespace()
+      endWithNewline()
+   }
 }
